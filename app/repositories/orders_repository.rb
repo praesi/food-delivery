@@ -32,4 +32,7 @@ class OrdersRepository
   def assigned_orders(employee_id)
     @orders.select { |order| order.employee.id == employee_id  }
   end
+
+
+  end
 end
