@@ -1,11 +1,12 @@
 class Customer
-  attr_accessor :customer_orders
+  attr_reader :name, :address, :orders_made
+  attr_accessor :id
   def initialize(attributes = {})
-    @name     = attributes[:name]
-    @address  = attributes[:address]
-    @customer_orders   = []
+    @id = attributes[:id]
+    @name = attributes[:name]
+    @address = attributes[:address]
+    @orders_made = []
   end
-
 end
 
 

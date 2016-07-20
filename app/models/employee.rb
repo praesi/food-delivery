@@ -1,14 +1,10 @@
 class Employee
-  attr_reader :user_name, :password
-  attr_accessor :id, :delivery_orders
+  attr_reader :username, :password, :id, :orders_to_deliver
   def initialize(attributes = {})
-    @job_description = attributes[:job_description]
-    @user_name = attributes[:user_name]
+    @id = attributes[:id]
+    @username = attributes[:username]
     @password = attributes[:password]
-    @delivery_orders = []
-  end
-
-  def add_order(order)
-    @delivery_orders << order
+    @position = attributes[:position]
+    @orders_to_deliver = []
   end
 end

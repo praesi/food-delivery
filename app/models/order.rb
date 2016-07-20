@@ -1,24 +1,18 @@
 class Order
-  attr_reader :delivered, :employee, :meal
-  attr_accessor :id
+  attr_reader :customer, :meal
+  attr_accessor :employee, :id
 
   def initialize(attributes = {})
-    customer  = attributes[:customer]
-    @customer = customer
-    customer.customer_orders << self
-    # TODO call method on customer to make it aware of this new order
-    @delivered = attributes[:delivered] || false
+    @id = attributes[:id]
     @meal = attributes[:meal]
-  end
+    @customer = attributes[:customer]
+    @customer.orders_made << self
 
-  def delivered
-    @delivered = true
+    @delivered = attributes[:delivered] || false
   end
 
   def assign_employee(employee)
     @employee = employee
-    employee.delivery_orders << self
+    employee.orders_to_deliver << self
   end
-
-
 end
